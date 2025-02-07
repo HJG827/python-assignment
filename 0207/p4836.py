@@ -50,8 +50,9 @@ for case_num in range(1, T+1):
         if colors[-1] == 1:
             for x in range(colors[0], colors[2]+1):
                 for y in range(colors[1], colors[3]+1):
-                    if area[x][y] == 0:
+                    if area[x][y] == 0 or area[x][y] == 2:
                         area[x][y] += 1
+                        
                     else:
                         continue
         if colors[-1] == 2:
