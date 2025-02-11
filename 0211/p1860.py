@@ -53,13 +53,10 @@ for tc in range(1, T + 1):
 
     result = "Possible"
 
-
-    else:
-        for i in range(N):
-            taiyaki = (arr[i] // M) * K
-
-            if taiyaki < i + 1:
-                result = "Impossible"
-                break
+    for i in range(N):
+        taiyaki = (arr[i] // M) * K
+        if taiyaki < i + 1:
+            result = "Impossible"
+            break
 
     print(f"#{tc} {result}")
