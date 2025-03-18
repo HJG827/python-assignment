@@ -82,5 +82,4 @@ for tc in range(1, T+1):
             result += 1
             end_time = trucks[i][1]
 
-
     print(f'#{tc} {result}')

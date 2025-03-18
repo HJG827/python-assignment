@@ -35,9 +35,8 @@ sys.stdin = open('.txt', 'r')
 
 def dfs(r, c, number):
     if len(number) == 7:
-        if number not in numbers:
             numbers.add(number)
-        return
+            return
 
     for dr, dc in ([0, 1], [1, 0], [0, -1], [-1, 0]):
         nr = r + dr

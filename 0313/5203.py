@@ -33,16 +33,18 @@ sys.stdin = open('.txt', 'r')
 
 def babygin(lst):
     N = len(lst)
-    lst.sort()
+    cnt = [0] * 10
 
-    idx = 0
-    while idx < N-1:
-        if lst[idx] == lst[idx+1] == lst[idx+2]:
+    for num in lst:
+        cnt[num] += 1
+
+    for i in range(10):
+        if cnt[i] >= 3:
             return 1
-        elif idx+2 < N and lst[idx] + 2 == lst[idx+1] + 1 ==lst[idx+2]:
+        
+    for i in range(8):
+        if cnt[i] and cnt[i+1] and cnt[i+2]:
             return 1
-        else:
-            idx += 1
 
     return 0
 
@@ -56,19 +58,16 @@ for tc in range(1, T+1):
     p2 = []
 
     answer = 0
-    for i in range(6):
-        p1.append(numbers[i*2])
-        p2.append(numbers[i*2 + 1])
-        card += 1
-        if card >= 3:
-            result1 = babygin(p1)
-            result2 = babygin(p2)
-
-            if result1 > result2:
+    for i in range(12):
+        if i % 2 == 0:
+            p1.append(numbers[i])
+            if len(p1) >= 3 and babygin(p1):
                 answer = 1
                 break
 
-            if result2 > result1:
+        else:
+            p2.append(numbers[i])
+            if len(p2) >= 3 and babygin(p2):
                 answer = 2
                 break
         
