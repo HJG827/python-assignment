@@ -226,8 +226,6 @@ for tc in range(1, T+1):
         for i in range(N//2):
             for j in range(i+1, N//2):
                 taste1 += arr[g1[i]][g1[j]] + arr[g1[j]][g1[i]]
-        for i in range(N//2):
-            for j in range(i+1, N//2):
                 taste2 += arr[g2[i]][g2[j]] + arr[g2[j]][g2[i]]
 
         if abs(taste1 - taste2) < differ:
